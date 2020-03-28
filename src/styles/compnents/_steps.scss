@@ -1,1 +1,37 @@
-/* Componente de passos */
+/* Steps Component*/
+
+.steps-box {
+    ul {
+        text-align: center;
+        li {
+            display: inline;
+            margin-left: 10px;
+            font-size: 12px;
+            color: $primary-red;
+            span {
+                padding: 5px 7px;
+                margin-right: 10px;
+                border-radius: 100%;
+                font-weight: 700;
+                border: 2px solid $primary-red;
+                font-size: 10px;
+            }
+            .next {
+                height: 19px;
+                margin-left: 10px;
+                vertical-align: middle;
+            }
+        }
+        .done {
+            span {
+                padding: 6px 6px;
+                margin-right: 10px;
+                border-radius: 100%;
+                background: $primary-red;
+                img {
+                    width: 9px;
+                }
+            }
+        }
+    }
+}

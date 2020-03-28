@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Steps from '../../components/steps';
 
 
 class PaymentPage extends Component {
@@ -11,6 +12,7 @@ class PaymentPage extends Component {
                         <h1>metodo de pagamento</h1>
                     </div>
                     <div className="payment-form">
+                        <Steps />
                         <h1>Form</h1>
                     </div>
                 </div>
