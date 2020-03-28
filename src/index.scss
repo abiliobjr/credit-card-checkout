@@ -1,4 +1,7 @@
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
+@import './styles/variables';
+@import './styles/configs';
+
 @import './styles/compnents/components';
 @import './styles/pages/pages';
