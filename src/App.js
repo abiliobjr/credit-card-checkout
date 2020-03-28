@@ -1,9 +1,14 @@
 import React from 'react';
-import './App.css';
 
 function App() {
   return (
-    <h1>Começando aplicação React.js</h1>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12">
+          <h1>Começando aplicação React.js</h1>
+        </div>
+      </div>
+    </div>
   );
 }
 
