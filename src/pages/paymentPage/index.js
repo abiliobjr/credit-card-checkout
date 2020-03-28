@@ -5,7 +5,7 @@ class PaymentPage extends Component {
 
     render(){
         return (
-            <div className="container">
+            <div className="container flex-container">
                 <div className="flex-container content-box" id="payment">
                     <div className="payment-method-box">
                         <h1>metodo de pagamento</h1>
