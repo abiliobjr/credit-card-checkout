@@ -1,1 +1,24 @@
 /* Payment Page */
+.content-box {
+    width: 80%;
+    height: 600px;
+    background: $white;
+}
+
+#payment {
+    .payment-method-box {
+        width: 35%;
+        box-sizing: border-box;
+        background: $primary-red;
+    }
+    .payment-form {
+        box-sizing: border-box;
+        width: 65%;
+    }
+}
+
+#carrinho {
+    background: $white;
+    width: 18%;
+    margin-left: 2%;
+}
