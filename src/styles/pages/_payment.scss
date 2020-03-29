@@ -10,6 +10,30 @@
         width: 35%;
         box-sizing: border-box;
         background: $primary-red;
+        padding: 50px;
+        h1 {
+            font-size: 20px;
+            color: $white;
+            margin-left: 10px;
+            font-weight: 700;
+        }
+        .rccs {
+            margin-top: 40px;
+            margin-right: -100px;
+        }
+        .change-payment-method-box {
+            margin-bottom: 60px;
+            a {
+                text-decoration: none;
+                color: $white;
+                font-size: 13px;
+                img {
+                    height: 15px;
+                    margin-right: 10px;
+                    vertical-align: middle;
+                }
+            }
+        }
     }
     .payment-form {
         box-sizing: border-box;
