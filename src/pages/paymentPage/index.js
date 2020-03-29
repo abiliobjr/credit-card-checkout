@@ -31,7 +31,39 @@ class PaymentPage extends Component {
                     </div>
                     <div className="payment-form">
                         <Steps />
-                        <h1>Form</h1>
+                        <form action="#">
+                            <div className="material-form-field">
+                                <input type="text" required name="text" id="field-text"/>
+                                <label className="material-form-field-label" for="field-text">Número do cartão</label>
+                            </div>
+                            <div className="material-form-field">
+                                <input type="text" required name="text" id="field-text"/>
+                                <label className="material-form-field-label" for="field-text">Nome (igual do cartão)</label>
+                            </div>
+                            <div className="flex-container space-between">
+                                <div className="material-form-field half">
+                                    <input type="text" required name="text" id="field-text"/>
+                                    <label className="material-form-field-label" for="field-text">Validade</label>
+                                </div>
+                                <div className="material-form-field half">
+                                    <input type="text" required name="text" id="field-text"/>
+                                    <label className="material-form-field-label" for="field-text">CVV</label>
+                                </div>
+                            </div>
+                            <div className="material-form-field">
+                                <input type="text" required name="dropDown" id="field-dropDown" autoComplete="false" />
+                                <label className="material-form-field-label" for="field-dropDown">Drop down</label>
+                                <ul className="material-dropdown">
+                                <li>Item 1</li>
+                                <li>Item 2</li>
+                                <li className="material-dropdown-selected">Item 3 selected</li>
+                                <li>Item 4</li>
+                                <li>Item 5</li>
+                                <li>Item 6</li>
+                                </ul>
+                            </div>
+                            <button>Continuar</button>
+                        </form>
                     </div>
                 </div>
                 <div id="carrinho">
