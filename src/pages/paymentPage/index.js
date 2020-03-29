@@ -12,7 +12,7 @@ class PaymentPage extends Component {
                 <div className="flex-container content-box" id="payment">
                     <div className="payment-method-box">
                         <div className="change-payment-method-box">
-                            <a href="#">
+                            <a href="#change-payment">
                                 <img src={back} alt=""/>
                                 Alterar forma de pagamento
                             </a>
