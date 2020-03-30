@@ -1,9 +1,12 @@
+import { getSelectedInstallment } from '../../utils/';
+
 const INITIAL_STATE = {
     cardNumber: '5149 4505 6231 6542',
     name: 'Abilio Junior',
     validity: '20/20',
     cvv: '123',
-    installments: 0
+    selectedInstallment: 1,
+    installments: []
 }
 
 export default function (state = INITIAL_STATE, action) {
@@ -27,6 +30,16 @@ export default function (state = INITIAL_STATE, action) {
             return {
                 ...state,
                 cvv: action.payload
+            }
+        case 'SELECT_INSTALLMENT_NUMBER':
+            return {
+                ...state,
+                selectedInstallment: getSelectedInstallment(state.installments, action.payload)
+            }
+        case 'LOADED_INSTALLMENT_DATA':
+            return {
+                ...state,
+                installments: action.payload
             }
         default:
             return state
