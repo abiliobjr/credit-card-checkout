@@ -8,7 +8,8 @@ import {
   validityInputChange,
   cvvInputChange,
   getInstallments,
-  selectInstallment
+  selectInstallment,
+  getInputOnFocus
 } from './actions';
 
 const mapStateToProps = state => ({ 
@@ -21,7 +22,8 @@ const mapDispatchToProps = dispatch => ({
   validityInputChange: validityInputChange(dispatch),
   cvvInputChange: cvvInputChange(dispatch),
   getInstallments: () => getInstallments(dispatch),
-  selectInstallment: selectInstallment(dispatch)
+  selectInstallment: selectInstallment(dispatch),
+  getInputOnFocus: getInputOnFocus(dispatch)
 })
 
 const CreditCardForm = connect(mapStateToProps, mapDispatchToProps)(View);

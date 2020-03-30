@@ -35,11 +35,18 @@ export const cvvInputChange = (dispatch) => (event) => {
 
 export const selectInstallment = (dispatch) => (event) => {
     const value = event.target.dataset.numberofinstallment;
-    console.log(event)
-    console.log('value', value)
     dispatch({
         type: 'SELECT_INSTALLMENT_NUMBER',
         payload: value
+    })
+}
+
+export const getInputOnFocus = (dispatch) => (event) => {
+    const name = event.target.name;
+    console.log("event", event)
+    dispatch({
+        type: 'GET_INPUT_ON_FOCUS',
+        payload: name
     })
 }
 

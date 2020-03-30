@@ -6,7 +6,8 @@ const INITIAL_STATE = {
     validity: '20/20',
     cvv: '123',
     selectedInstallment: 1,
-    installments: []
+    installments: [],
+    inputOnFocus: ''
 }
 
 export default function (state = INITIAL_STATE, action) {
@@ -35,6 +36,11 @@ export default function (state = INITIAL_STATE, action) {
             return {
                 ...state,
                 selectedInstallment: getSelectedInstallment(state.installments, action.payload)
+            }
+        case 'GET_INPUT_ON_FOCUS':
+            return {
+                ...state,
+                inputOnFocus: action.payload
             }
         case 'LOADED_INSTALLMENT_DATA':
             return {
