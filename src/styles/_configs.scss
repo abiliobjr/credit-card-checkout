@@ -6,6 +6,9 @@ body {
 .container {
     width: 65%;
     margin: 0 auto;
+    @media #{$old-computers} {
+        width: 80%;
+    }
 }
 
 .flex-container {
