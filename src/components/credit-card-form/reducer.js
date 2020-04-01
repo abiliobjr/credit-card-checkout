@@ -1,10 +1,10 @@
 import { getSelectedInstallment } from '../../utils/';
 
 const INITIAL_STATE = {
-    cardNumber: '5149 4505 6231 6542',
-    name: 'Abilio Junior',
-    validity: '20/20',
-    cvv: '123',
+    cardNumber: '',
+    name: '',
+    validity: '',
+    cvv: '',
     selectedInstallment: 1,
     installments: [],
     inputOnFocus: ''
