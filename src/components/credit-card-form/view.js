@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import ReduceMask from 'reduce-mask'
+
+
 class CreditCardForm extends Component {
     componentDidMount() {
         this.props.getInstallments();
@@ -19,29 +22,59 @@ class CreditCardForm extends Component {
     return (
         <form action="#">
             <div className="material-form-field">
-                <input type="text" required name="number" className="field-text" onChange={this.props.cardNumberInputChange} value={cardNumber}/>
-                <label className="material-form-field-label" for="field-text" >Número do cartão</label>
+                <ReduceMask
+                    type="number"
+                    name="number"
+                    className="field-text"
+                    mask={['____ ____ ____ ____']}
+                    onChange={this.props.cardNumberInputChange}
+                    value={cardNumber}
+                    required
+                />
+                <label className="material-form-field-label" htmlFor="field-text" >Número do cartão</label>
             </div>
             <div className="material-form-field">
-                <input type="text" required name="name" className="field-text" onChange={this.props.nameInputChange} value={name}/>
-                <label className="material-form-field-label" for="field-text">Nome (igual do cartão)</label>
+                <input
+                    type="text"
+                    name="name"
+                    className="field-text"
+                    onChange={this.props.nameInputChange}
+                    value={name}
+                    minLength={6}
+                    required
+                />
+                <label className="material-form-field-label" htmlFor="field-text">Nome (igual do cartão)</label>
             </div>
             <div className="flex-container space-between">
                 <div className="material-form-field half">
-                    <input type="text" required name="expiry" className="field-text" onChange={this.props.validityInputChange} value={validity} />
-                    <label className="material-form-field-label" for="field-text">Validade</label>
+                    <ReduceMask
+                        mask={['__/__']}
+                        name="expiry"
+                        className="field-text"
+                        onChange={this.props.validityInputChange}
+                        value={validity}
+                        required
+                    />
+                    <label className="material-form-field-label" htmlFor="field-text">Validade</label>
                 </div>
                 <div className="material-form-field half">
-                    <input type="text" required name="cvc" className="field-text" onChange={this.props.cvvInputChange} value={cvv} />
-                    <label className="material-form-field-label" for="field-text">CVV</label>
+                    <ReduceMask
+                        mask={['___']}
+                        name="cvc"
+                        className="field-text"
+                        onChange={this.props.cvvInputChange}
+                        value={cvv}
+                        required
+                    />
+                    <label className="material-form-field-label" htmlFor="field-text">CVV</label>
                 </div>
             </div>
             <div className="material-form-field">
                 {
                     selectedInstallment &&
                     <React.Fragment>
-                        <input type="text" required name="dropDown" name="installment" id="field-dropDown" value={selectedInstallment.text} onChange={() =>''}/>
-                        <label className="material-form-field-label" for="field-dropDown">Número de parcelas</label>
+                        <input type="text" required name="installment" id="field-dropDown" value={selectedInstallment.text} onChange={() =>''}/>
+                        <label className="material-form-field-label" htmlFor="field-dropDown">Número de parcelas</label>
                         <ul className="material-dropdown">
                             {
                                 installments.map(installment => {
@@ -50,7 +83,7 @@ class CreditCardForm extends Component {
                                             data-numberofinstallment={installment.number}
                                             key={'installment'+installment.number}
                                             className={`
-                                                ${selectedInstallment == installment.number ? 'material-dropdown-selected' : ''}
+                                                ${selectedInstallment === installment.number ? 'material-dropdown-selected' : ''}
                                             `}
                                             onClick={this.props.selectInstallment}
                                         >

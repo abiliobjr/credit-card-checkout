@@ -8695,6 +8695,11 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
+pytils@^1.40.3:
+  version "1.40.3"
+  resolved "https://registry.yarnpkg.com/pytils/-/pytils-1.40.3.tgz#6d9bc0c6139409ce7509023edab5870ebc5f444c"
+  integrity sha512-k1Vn87Zg5hIyEhXy29eUs9YrOnOq+TNPOxTt5meSxiOH/3Sv1SkJMTEIBXri7lChdoeIXpc/GY1i0hw3BovCdg==
+
 q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
@@ -8915,7 +8920,7 @@ react-scripts@3.4.1:
   optionalDependencies:
     fsevents "2.1.2"
 
-react@^16.13.1:
+react@^16.13.1, react@^16.4.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
@@ -9042,6 +9047,14 @@ redent@^3.0.0:
   dependencies:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
+
+reduce-mask@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/reduce-mask/-/reduce-mask-1.2.5.tgz#ed84615f09e967e704b744dd2bc25e04e2639f12"
+  integrity sha512-Ez7NgImsJPWUNEx4Tti+frKskYHQgZ5pfOjO7io3BW3rohVpVZHYiv4xAOKpYtAl0jM+NZ4hSzTh/kr2rxkggA==
+  dependencies:
+    pytils "^1.40.3"
+    react "^16.4.0"
 
 redux@^4.0.5:
   version "4.0.5"
