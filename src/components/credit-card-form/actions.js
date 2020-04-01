@@ -1,5 +1,5 @@
-import axios from "axios";
-import MockAdapter from "axios-mock-adapter";
+// import axios from "axios";
+// import MockAdapter from "axios-mock-adapter";
 
 export const nameInputChange = (dispatch) => (event) => {
     const value = event.target.value;

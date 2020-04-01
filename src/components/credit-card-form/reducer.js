@@ -5,7 +5,7 @@ const INITIAL_STATE = {
     name: '',
     validity: '',
     cvv: '',
-    selectedInstallment: 1,
+    selectedInstallment: 5,
     installments: [],
     inputOnFocus: ''
 }

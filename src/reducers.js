@@ -1,4 +1,4 @@
-import { combineReducers, createStore } from 'redux'
+import { combineReducers } from 'redux'
 
 import creditCardForm from './components/credit-card-form/reducer';
 
