@@ -43,7 +43,6 @@ export const selectInstallment = (dispatch) => (event) => {
 
 export const getInputOnFocus = (dispatch) => (event) => {
     const name = event.target.name;
-    console.log("event", event)
     dispatch({
         type: 'GET_INPUT_ON_FOCUS',
         payload: name
