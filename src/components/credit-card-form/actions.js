@@ -1,6 +1,8 @@
 // import axios from "axios";
 // import MockAdapter from "axios-mock-adapter";
 
+import { closeSelect } from '../../utils';
+
 export const nameInputChange = (dispatch) => (event) => {
     const value = event.target.value;
     dispatch({
@@ -35,6 +37,7 @@ export const cvvInputChange = (dispatch) => (event) => {
 
 export const selectInstallment = (dispatch) => (event) => {
     const value = event.target.dataset.numberofinstallment;
+    closeSelect();
     dispatch({
         type: 'SELECT_INSTALLMENT_NUMBER',
         payload: value

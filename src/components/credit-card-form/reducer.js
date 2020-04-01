@@ -35,7 +35,7 @@ export default function (state = INITIAL_STATE, action) {
         case 'SELECT_INSTALLMENT_NUMBER':
             return {
                 ...state,
-                selectedInstallment: getSelectedInstallment(state.installments, action.payload)
+                selectedInstallment: getSelectedInstallment(state.installments, Number(action.payload))
             }
         case 'GET_INPUT_ON_FOCUS':
             return {

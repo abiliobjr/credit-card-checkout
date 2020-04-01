@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import ReduceMask from 'reduce-mask'
 
+import { openSelect } from '../../utils';
 
 class CreditCardForm extends Component {
     componentDidMount() {
@@ -73,15 +74,16 @@ class CreditCardForm extends Component {
                 {
                     selectedInstallment &&
                     <React.Fragment>
-                        <input type="text" required name="installment" id="field-dropDown" value={selectedInstallment.text} onChange={() =>''}/>
+                        <input type="text" required name="installment" id="field-dropDown" onFocus={()=> openSelect() } value={selectedInstallment.text}/>
                         <label className="material-form-field-label" htmlFor="field-dropDown">Número de parcelas</label>
-                        <ul className="material-dropdown">
+                        <ul className="material-dropdown" id="drop">
                             {
                                 installments.map(installment => {
                                     return (
                                         <li
                                             data-numberofinstallment={installment.number}
                                             key={'installment'+installment.number}
+                                            id={installment.number}
                                             className={`
                                                 ${selectedInstallment === installment.number ? 'material-dropdown-selected' : ''}
                                             `}
