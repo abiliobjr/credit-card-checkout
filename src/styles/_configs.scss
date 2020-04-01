@@ -9,10 +9,17 @@ body {
     @media #{$old-computers} {
         width: 80%;
     }
+    @media #{$tablet} {
+        width: 90%;
+    }
+    @media #{$phone} {
+        width: 100%;
+    }
 }
 
 .flex-container {
     display: flex;
+    
 }
 
 

@@ -6,5 +6,20 @@ $dark-grey: #3C3C3C;
 
 $primary-red: #DE4B4B;
 
+$material-form-label: #000000;
+$material-form-label-focus: $dark-grey;
+$material-form-line: #000000;
+$material-form-line-focus: $material-form-label-focus;
+$material-form-input-text: $material-form-label;
+$material-form-input-text-focus: $material-form-label-focus;
+$material-form-field-invalid-foreground: #d50000;
 
-$old-computers: "screen and (min-width: 1200px) and (max-width: 1366px)";
+$material-dropdown-hoverBackground: #e8eaf6;
+$material-dropdown-selectedBackground: #9fa8da;
+$material-labelOffset: 25px;
+$material-textInputPaddingTopBottom: 10px;
+
+
+$old-computers: "(min-width: 768px) and (max-width: 1366px)";
+$tablet: "(min-width: 768px) and (max-width: 1024px) and (orientation: landscape)";
+$phone: "(min-width: 320px) and (max-width: 767px)";

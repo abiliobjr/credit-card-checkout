@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Cards from 'react-credit-cards';
 
 import back from '../../images/back.svg';
@@ -6,6 +6,8 @@ import CreditCard from '../../images/credit-card.svg';
 
 import Steps from '../../components/steps';
 import CreditCardForm from '../../components/credit-card-form'
+
+import { isMobile } from '../../utils';
 class PaymentPage extends Component {
     render(){
         return (
@@ -15,10 +17,14 @@ class PaymentPage extends Component {
                         <div className="change-payment-method-box">
                             <a href="#change-payment">
                                 <img src={back} alt=""/>
-                                Alterar forma de pagamento
+                                {
+                                    isMobile() ?
+                                        <Fragment><span>Etapa 2</span> de  3</Fragment>:
+                                        'Alterar forma de pagamento'
+                                }
                             </a>
                         </div>
-                        <div className="flex-container">
+                        <div className="flex-container title">
                             <img src={CreditCard} alt=""/>
                             <h1>Adicione um novo cartão de crédito</h1>
                         </div>
@@ -31,13 +37,20 @@ class PaymentPage extends Component {
                         />
                     </div>
                     <div className="payment-form">
-                        <Steps />
+                        {
+                            !isMobile() &&
+                                <Steps />
+                        }
                         <CreditCardForm />
                     </div>
                 </div>
-                <div id="carrinho">
-                    <h1>carrinho</h1>
-                </div>
+                {
+                    !isMobile() &&
+                        <div id="carrinho">
+                            <h1>carrinho</h1>
+                        </div>    
+                }
+                
             </div>
         )
     }
