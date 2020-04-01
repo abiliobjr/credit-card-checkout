@@ -21,7 +21,7 @@ class CreditCardForm extends Component {
     render(){
         const { cardNumber, name, validity, cvv, installments, selectedInstallment } = this.props.creditCardForm;
     return (
-        <form action="#">
+        <form method="POST">
             <div className="material-form-field">
                 <ReduceMask
                     type="number"
@@ -98,7 +98,7 @@ class CreditCardForm extends Component {
                 </React.Fragment>
                 }
             </div>
-            <button>Continuar</button>
+            <button onClick={this.props.payWithCreditCard}>Continuar</button>
         </form>
     )}
 }

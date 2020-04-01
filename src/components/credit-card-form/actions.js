@@ -1,4 +1,4 @@
-// import axios from "axios";
+import axios from "axios";
 // import MockAdapter from "axios-mock-adapter";
 
 import { closeSelect } from '../../utils';
@@ -64,6 +64,33 @@ export const getInstallments = (dispatch) => {
             { number: 6, text: "6x Sem juros!" },
         ]
     })
+}
+
+export const payWithCreditCard = (dispatch) => (state) => (event) => {
+    event.preventDefault();
+    let data = {
+        number: state.cardNumber,
+        name: state.name,
+        expiry: state.validity,
+        cvv: state.cvv
+    }
+    axios.post('/pagar', data,{
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'chave'
+    }})
+        .then(response => {
+            dispatch({
+                type: 'SUCCESS_PAYMENT',
+                payload: response.data
+            })
+        })
+        .catch(error => {
+            dispatch({
+                type: 'FAILED_PAYMENT',
+                payload: error.response
+            })
+        })
 }
 
 

@@ -9,7 +9,8 @@ import {
   cvvInputChange,
   getInstallments,
   selectInstallment,
-  getInputOnFocus
+  getInputOnFocus,
+  payWithCreditCard
 } from './actions';
 
 const mapStateToProps = state => ({ 
@@ -23,9 +24,23 @@ const mapDispatchToProps = dispatch => ({
   cvvInputChange: cvvInputChange(dispatch),
   getInstallments: () => getInstallments(dispatch),
   selectInstallment: selectInstallment(dispatch),
-  getInputOnFocus: getInputOnFocus(dispatch)
+  getInputOnFocus: getInputOnFocus(dispatch),
+  dispatchPayWithCreditCard: payWithCreditCard(payWithCreditCard)
+  
 })
 
-const CreditCardForm = connect(mapStateToProps, mapDispatchToProps)(View);
+
+const mergeProps = (propsFromState, propsFromDispatch) => {
+  const { dispatchPayWithCreditCard } = propsFromDispatch;
+  const { creditCardForm} = propsFromState;
+  return {
+      ...propsFromState,
+      ...propsFromDispatch,
+      payWithCreditCard: dispatchPayWithCreditCard(creditCardForm)
+  };
+};
+
+
+const CreditCardForm = connect(mapStateToProps, mapDispatchToProps, mergeProps)(View);
 
 export default CreditCardForm;

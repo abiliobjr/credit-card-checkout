@@ -1,6 +1,5 @@
 export const getSelectedInstallment = (array, selectedInstallment) => {
     const selected = array.filter(x => x.number === selectedInstallment)
-    console.log(selected)
     return selected[0];
 }
 
